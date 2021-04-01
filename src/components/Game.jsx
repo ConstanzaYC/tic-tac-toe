@@ -1,23 +1,38 @@
 import React from "react";
 import './game.css';
 
-const cellsValues = [1,2,3,4,5,6,7,8,9];
-
-class Cell extends React.Component {
-  render() {
-    return (
-      <button className="game-board__cell">{this.props.value}</button>
-    );
-  }
+function Cell(props) {
+  return (
+    <button className="game-board__cell" onClick={props.onClick}>{props.value}</button>
+  );
 }
 
 class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cells: Array(9).fill(null),
+      xIsNext: true,
+    }
+  }
+
+  handleClick(i) {
+    const cells = this.state.cells.slice();
+    cells[i] = this.state.xIsNext ? 'X' : 'O';
+    this.setState({
+      cells: cells,
+      xIsNext: !this.state.xIsNext,
+    });
+  };
+
   render() {
     return (
       <div className="game-board">
-        {cellsValues.map((cellValue) => ( 
-          <Cell value={cellValue} />
-        ))}
+        {this.state.cells.map((cell, i) =>{
+          return (
+            <Cell value={cell} key={i} onClick={() => this.handleClick(i)}/>
+          )
+        })}
       </div>
     );
   }
@@ -32,3 +47,11 @@ const Game = () => {
 };
 
 export default Game;
+
+// TO DO:
+// Hide all button values and add onClick method to show them
+
+// Next
+// Improves styles
+// Config sass (maybe)
+// Possibility of adding names so you can know which is the next player

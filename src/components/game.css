@@ -1,7 +1,6 @@
-body {
-  color: red;
-}
+/* GAME STYLES*/
 
+/* BOARD STYLES*/
 .game-board {
   width: 250px;
   height: 250px;
@@ -10,6 +9,8 @@ body {
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
 
+/* CELLS STYLES*/
 .game-board__cell {
   font-size: 1.5em;
 }
+
