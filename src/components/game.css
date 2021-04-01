@@ -1,0 +1,15 @@
+body {
+  color: red;
+}
+
+.game-board {
+  width: 250px;
+  height: 250px;
+  border: 1px blue solid;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.game-board__cell {
+  font-size: 1.5em;
+}
