@@ -1,6 +1,7 @@
 import React from "react";
 import './game.css';
 
+
 function Cell(props) {
   return (
     <button className="game-board__cell" onClick={props.onClick}>{props.value}</button>
@@ -37,11 +38,12 @@ class Board extends React.Component {
     );
   }
 }
-const Game = () => {
+const Game = (props) => {
   return (
     <>
       <Board />
       <p>Next player:</p>
+
     </>
   );
 };
@@ -49,9 +51,10 @@ const Game = () => {
 export default Game;
 
 // TO DO:
-// Hide all button values and add onClick method to show them
+// Hide all button values and add onClick method to show them [done]
+// Add game's logic
 
 // Next
 // Improves styles
 // Config sass (maybe)
-// Possibility of adding names so you can know which is the next player
+// Possibility of adding names and match them with X or O so you can know which is the next player
