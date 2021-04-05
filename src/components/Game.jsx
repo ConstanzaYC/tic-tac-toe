@@ -43,7 +43,7 @@ const Game = (props) => {
     <>
       <Board />
       <p>Next player:</p>
-
+      <button onClick={() => alert('This will reset the game but not now')}>Reset</button>
     </>
   );
 };
